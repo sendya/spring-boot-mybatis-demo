@@ -1,9 +1,12 @@
 package com.loacg.bootstrap;
 
+import com.alibaba.druid.support.http.StatViewServlet;
 import com.loacg.handler.AuthRequireInterceptor;
 import com.loacg.handler.CustomRequestMappingHandlerMapping;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.WebMvcRegistrations;
+import org.springframework.boot.web.servlet.ServletRegistrationBean;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -24,6 +27,11 @@ public class WebInitializer extends WebMvcConfigurerAdapter implements WebMvcReg
     @Autowired
     public WebInitializer(AuthRequireInterceptor authRequireInterceptor) {
         this.authRequireInterceptor = authRequireInterceptor;
+    }
+
+    @Bean
+    public ServletRegistrationBean druidServlet() {
+        return new ServletRegistrationBean(new StatViewServlet(), "/druid/*");
     }
 
     @Override

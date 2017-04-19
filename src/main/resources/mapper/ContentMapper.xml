@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.loacg.mapper.ContentMapper" >
+  <resultMap id="BaseResultMap" type="com.loacg.entity.Content" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="thread_id" property="threadId" jdbcType="BIGINT" />
+    <result column="site_id" property="siteId" jdbcType="INTEGER" />
+    <result column="thread_key" property="threadKey" jdbcType="VARCHAR" />
+    <result column="thread_title" property="threadTitle" jdbcType="VARCHAR" />
+    <result column="thread_url" property="threadUrl" jdbcType="VARCHAR" />
+    <result column="created" property="created" jdbcType="TIMESTAMP" />
+    <result column="status" property="status" jdbcType="BIT" />
+    <result column="comment_count" property="commentCount" jdbcType="INTEGER" />
+    <result column="comment_allow" property="commentAllow" jdbcType="BIT" />
+  </resultMap>
+</mapper>
