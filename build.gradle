@@ -1,0 +1,45 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.2.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'war'
+
+version = '1.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+configurations {
+	providedRuntime
+}
+
+dependencies {
+	compile(
+			'com.alibaba:druid:1.0.23',
+			'javax.persistence:persistence-api:1.0',
+			'org.springframework.boot:spring-boot-devtools',
+			'org.springframework.boot:spring-boot-starter-web',
+			'org.springframework.boot:spring-boot-starter-jdbc',
+			'org.springframework.boot:spring-boot-starter-mail',
+			'org.springframework.boot:spring-boot-starter-thymeleaf',
+			'org.mybatis.spring.boot:mybatis-spring-boot-starter:1.3.0',
+			'tk.mybatis:mapper-spring-boot-starter:1.1.1',
+			'com.github.pagehelper:pagehelper-spring-boot-starter:1.1.0'
+	)
+	runtime('mysql:mysql-connector-java')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
+}
