@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 public class ServletInitializer extends SpringBootServletInitializer {
-
+/*
 	static {
 		// output color fix
 		System.setProperty("spring.output.ansi.enabled", "ALWAYS");
@@ -21,6 +21,6 @@ public class ServletInitializer extends SpringBootServletInitializer {
 	@Bean
 	public RestTemplate restTemplate() {
 		return new RestTemplate();
-	}
+	}*/
 
 }

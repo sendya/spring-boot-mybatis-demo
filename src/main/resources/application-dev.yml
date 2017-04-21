@@ -1,5 +1,11 @@
 # spring base
 spring:
+  thymeleaf:
+    cache: false
+    prefix:
+    suffix: .html
+    mode: HTML5
+    encoding: UTF-8
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver

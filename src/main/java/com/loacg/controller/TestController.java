@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Project: spring-boot-mybatis
@@ -29,6 +30,11 @@ public class TestController {
     @ResponseBody
     public Data hello(String name, Integer id) {
         return new Data().setData(siteService.getById(id)).setMessage("hello, " + name).setError(0);
+    }
+
+    @RequestMapping(value = "/")
+    public ModelAndView home() {
+        return new ModelAndView("test");
     }
 
 }
